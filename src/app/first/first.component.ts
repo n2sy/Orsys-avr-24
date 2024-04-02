@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Candidat } from '../models/candidat';
 
 @Component({
   selector: 'app-first',
@@ -9,6 +10,8 @@ export class FirstComponent {
   cabinet = 'Orsys';
   color = 'pink';
   hd = true;
+
+  cand = new Candidat(1, 'aa', 'aa', 'aa', 23, 'ee');
 
   showAlert() {
     alert("J'ai été cliqué !");
