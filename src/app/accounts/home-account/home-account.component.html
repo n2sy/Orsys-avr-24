@@ -1,1 +1,7 @@
-<p>home-account works!</p>
+<div class="col-7">
+  <app-add-account (addEvent)="addNewAccount($event)"></app-add-account>
+
+  @for (acc of tabAccounts; track $index) {
+  <app-item-account [oneAccount]="acc"></app-item-account>
+  }
+</div>

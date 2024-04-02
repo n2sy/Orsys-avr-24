@@ -1,1 +1,13 @@
-<p>add-account works!</p>
+Account Name :
+<input #inputName type="text" class="form-control" />
+
+Account Status :
+<select #selectStatut name="" id="" class="form-control">
+  @for (opt of allOptions; track $index) {
+  <option [value]="opt">{{ opt }}</option>
+  }
+</select>
+
+<button (click)="sendNewAccountToHome()" class="btn btn-primary">
+  Add Account
+</button>
