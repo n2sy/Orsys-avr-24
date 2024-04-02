@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-5">
+    <app-liste
+      (listeEvent)="recupererCandidat($event)"
+      [allCandidats]="tabCandidats"
+    ></app-liste>
+  </div>
+  <div class="col-7">
+    <!-- <app-details
+      *ngIf="selectedCandidat"
+      [selCandidat]="selectedCandidat"
+    ></app-details> -->
+
+    @if(selectedCandidat) {
+    <app-details [selCandidat]="selectedCandidat"></app-details>
+    } @else {
+    <h4>Veuillez sélectionner un candidat...</h4>
+    }
+  </div>
+</div>
