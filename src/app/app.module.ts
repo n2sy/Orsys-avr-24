@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
+import { FormsModule } from '@angular/forms';
+import { ChildComponent } from './jean/child/child.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, FirstComponent, ChildComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

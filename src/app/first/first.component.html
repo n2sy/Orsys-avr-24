@@ -1,6 +1,20 @@
+Inteprolation
 <h3>Formation en {{ topic }} chez {{ cabinet }} - {{ 3 + 4 }}</h3>
-
+<hr />
+Property Binding
 <div [hidden]="hd" [style.backgroundColor]="color">Avec Klee Group</div>
 <div style.backgroundColor="{{ color }}">Avec Klee Group</div>
+<hr />
+Event Binding
+<button class="btn btn-primary" (click)="showAlert()">Click me</button>
+<hr />
+2-way-binding
+<input type="text" class="form-control" [(ngModel)]="topic" />
 
-<button (click)="showAlert()">Click me</button>
+<hr />
+
+<app-child
+  (childEventToFirst)="traitementDuFirst($event)"
+  (childEventToApp)="traitementDuFirst2($event)"
+  [cl]="color"
+></app-child>

@@ -2,3 +2,10 @@
 <hr />
 
 <app-first></app-first>
+
+<p>Dans AppComponent</p>
+<h4>{{ title }} </h4>
+<app-child
+  (childEventToApp)="traitementDuApp($event)"
+  [cl]="'green'"
+></app-child>

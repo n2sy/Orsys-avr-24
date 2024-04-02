@@ -9,4 +9,8 @@ export class AppComponent {
 
   prenom: string;
   age;
+
+  traitementDuApp(info) {
+    this.title = info;
+  }
 }

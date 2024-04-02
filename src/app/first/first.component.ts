@@ -7,10 +7,17 @@ import { Component } from '@angular/core';
 export class FirstComponent {
   topic = 'angular';
   cabinet = 'Orsys';
-  color = 'yellow';
+  color = 'pink';
   hd = true;
 
   showAlert() {
     alert("J'ai été cliqué !");
+  }
+
+  traitementDuFirst(msg) {
+    alert(msg);
+  }
+  traitementDuFirst2(msg) {
+    console.log(msg);
   }
 }
