@@ -24,6 +24,7 @@ import { RecruesComponent } from './recrues/recrues.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { KLEE_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     RecruesComponent,
     AccueilComponent,
     NavbarComponent,
+    InfosComponent,
   ],
   imports: [BrowserModule, FormsModule, KLEE_ROUTING],
   providers: [FirstService],
