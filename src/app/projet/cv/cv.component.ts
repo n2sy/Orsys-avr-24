@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Candidat } from '../../models/candidat';
+import { GestionCandidatsService } from '../../services/gestion-candidats.service';
+import { FirstService } from '../../services/first.service';
 
 @Component({
   selector: 'app-cv',
@@ -7,15 +9,26 @@ import { Candidat } from '../../models/candidat';
   styleUrl: './cv.component.css',
 })
 export class CvComponent {
-  tabCandidats: Candidat[] = [
-    new Candidat(1, 'homer', 'simpson', 'chef de projet', 53, 'homer.png'),
-    new Candidat(2, 'bart', 'simpson', 'ingénieur', 28, 'bart.jpeg'),
-    new Candidat(3, 'lisa', 'simpson', 'designer', 23, 'lisa.png'),
-    new Candidat(4, 'nidhal', 'jelassi', 'trainer', 40),
-  ];
+  tabCandidats: Candidat[] = [];
   selectedCandidat: Candidat;
+
+  constructor(private firstSer: FirstService) {}
+  candSer = inject(GestionCandidatsService);
+
+  ngOnInit() {
+    this.tabCandidats = this.candSer.getAllCandidats();
+    this.firstSer.afficherSalut();
+  }
 
   recupererCandidat(cand) {
     this.selectedCandidat = cand;
+  }
+
+  addNewCandidat() {
+    this.candSer.addCandidat();
+  }
+
+  showList() {
+    console.log(this.candSer.getAllCandidats());
   }
 }

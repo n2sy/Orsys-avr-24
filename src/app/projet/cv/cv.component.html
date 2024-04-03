@@ -1,9 +1,6 @@
 <div class="row">
   <div class="col-5">
-    <app-liste
-      (listeEvent)="recupererCandidat($event)"
-      [allCandidats]="tabCandidats"
-    ></app-liste>
+    <app-liste (listeEvent)="recupererCandidat($event)"></app-liste>
   </div>
   <div class="col-7">
     <!-- <app-details
@@ -18,3 +15,10 @@
     }
   </div>
 </div>
+
+<button (click)="addNewCandidat()" class="btn btn-primary">
+  Ajouter Candidat
+</button>
+<button (click)="showList()" class="btn btn-info">
+  afficher liste Candidat à partir de CV
+</button>

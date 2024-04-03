@@ -14,7 +14,7 @@ export class CustomDirDirective {
     this.cl = 'white';
   }
   @HostListener('mouseleave') mouseleave() {
-    this.bg = 'pink';
+    this.bg = 'white';
     this.cl = 'black';
   }
 }

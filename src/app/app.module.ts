@@ -19,6 +19,7 @@ import { CustomDirDirective } from './directives/custom-dir.directive';
 import { ShortPipe } from './pipes/short.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DefaultAvatarPipe } from './pipes/default-avatar.pipe';
+import { FirstService } from './services/first.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { DefaultAvatarPipe } from './pipes/default-avatar.pipe';
     DefaultAvatarPipe,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [FirstService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
