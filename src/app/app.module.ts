@@ -12,9 +12,28 @@ import { DetailsComponent } from './projet/details/details.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
+import { DirectComponent } from './direct/direct.component';
+import { MsWordComponent } from './ms-word/ms-word.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
+import { CustomDirDirective } from './directives/custom-dir.directive';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, ItemAccountComponent, AddAccountComponent],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    ChildComponent,
+    CvComponent,
+    ListeComponent,
+    ItemComponent,
+    DetailsComponent,
+    HomeAccountComponent,
+    ItemAccountComponent,
+    AddAccountComponent,
+    DirectComponent,
+    MsWordComponent,
+    ManageServersComponent,
+    CustomDirDirective,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

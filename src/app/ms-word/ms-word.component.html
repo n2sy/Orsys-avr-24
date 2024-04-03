@@ -1,0 +1,31 @@
+<div
+  [ngStyle]="{
+    backgroundColor: bg,
+    textDecoration: decoration,
+    fontSize: taille,
+    fontFamily: police
+  }"
+>
+  Exercice de Ms-Word
+</div>
+
+Background Color :
+<input [(ngModel)]="bg" type="text" class="form-control" />
+
+Text Decoration :
+<select [(ngModel)]="decoration" name="" id="" class="form-control">
+  <option value=""></option>
+  <option value="underline">Souligné</option>
+  <option value="overline">Surligné</option>
+  <option value="underline overline">Les deux</option>
+</select>
+
+Font Size :
+<input #sz (change)="setSize(sz.value)" type="number" class="form-control" />
+
+Font Family :
+<select [(ngModel)]="police" name="" id="" class="form-control">
+  @for (font of allFonts; track $index) {
+  <option [value]="font">{{ font }}</option>
+  }
+</select>
