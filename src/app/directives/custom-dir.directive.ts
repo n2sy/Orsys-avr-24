@@ -4,10 +4,16 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
   selector: '[appCustomDir]',
 })
 export class CustomDirDirective {
-  @HostBinding('style.backgroundColor') bg;
+  @HostBinding('style.backgroundColor')
+  bg;
   @HostBinding('style.color') cl;
 
-  constructor() {}
+  constructor() {
+    console.log();
+  }
+  // constructor(private elt: ElementRef) {
+  //   console.log(elt.nativeElement.parentNode);
+  // }
 
   @HostListener('mouseenter') mouseenter() {
     this.bg = 'grey';
