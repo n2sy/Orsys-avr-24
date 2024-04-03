@@ -1,0 +1,21 @@
+<h2>Bienvenue à la formation Angular avec Klee Group</h2>
+
+<h4>Navigation côté Template</h4>
+
+<button routerLink="cv" class="btn btn-success">Go To CV</button>
+
+<button [routerLink]="['accounts']" class="btn btn-warning">
+  Go To Accounts
+</button>
+
+<hr />
+
+<button (click)="goToCv()" class="btn btn-danger">Go To CV</button>
+
+<button
+  (click)="goToAccounts()"
+  [routerLink]="['accounts']"
+  class="btn btn-info"
+>
+  Go To Accounts
+</button>

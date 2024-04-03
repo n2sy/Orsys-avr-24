@@ -21,6 +21,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { DefaultAvatarPipe } from './pipes/default-avatar.pipe';
 import { FirstService } from './services/first.service';
 import { RecruesComponent } from './recrues/recrues.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { KLEE_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +45,10 @@ import { RecruesComponent } from './recrues/recrues.component';
     FilterPipe,
     DefaultAvatarPipe,
     RecruesComponent,
+    AccueilComponent,
+    NavbarComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, KLEE_ROUTING],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })
