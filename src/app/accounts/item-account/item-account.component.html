@@ -2,7 +2,25 @@
   <h4>{{ oneAccount.name }} </h4>
   <hr />
   <p>This accout is {{ oneAccount.statut }} </p>
-  <button class="btn btn-success">Set to 'active'</button>
-  <button class="btn btn-danger">Set to 'inactive'</button>
-  <button class="btn btn-info">Set to 'unknown'</button>
+  <button
+    [disabled]="oneAccount.statut == 'active'"
+    (click)="changeStatut('active')"
+    class="btn btn-success"
+  >
+    Set to 'active'
+  </button>
+  <button
+    [disabled]="oneAccount.statut == 'inactive'"
+    (click)="changeStatut('inactive')"
+    class="btn btn-danger"
+  >
+    Set to 'inactive'
+  </button>
+  <button
+    [disabled]="oneAccount.statut == 'unknown'"
+    (click)="changeStatut('unknown')"
+    class="btn btn-info"
+  >
+    Set to 'unknown'
+  </button>
 </div>
