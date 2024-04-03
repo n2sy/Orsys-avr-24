@@ -11,6 +11,7 @@ export class CvComponent {
     new Candidat(1, 'homer', 'simpson', 'chef de projet', 53, 'homer.png'),
     new Candidat(2, 'bart', 'simpson', 'ingénieur', 28, 'bart.jpeg'),
     new Candidat(3, 'lisa', 'simpson', 'designer', 23, 'lisa.png'),
+    new Candidat(4, 'nidhal', 'jelassi', 'trainer', 40),
   ];
   selectedCandidat: Candidat;
 

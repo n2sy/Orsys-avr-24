@@ -17,6 +17,8 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { ManageServersComponent } from './manage-servers/manage-servers.component';
 import { CustomDirDirective } from './directives/custom-dir.directive';
 import { ShortPipe } from './pipes/short.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { DefaultAvatarPipe } from './pipes/default-avatar.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ShortPipe } from './pipes/short.pipe';
     ManageServersComponent,
     CustomDirDirective,
     ShortPipe,
+    FilterPipe,
+    DefaultAvatarPipe,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

@@ -1,5 +1,7 @@
+<input type="text" class="form-control" [(ngModel)]="selectedStatut" />
+<br />
 <ol class="list-group">
-  @for (serv of tabServers; track $index) {
+  @for (serv of tabServers | filter:selectedStatut; track $index) {
   <li [ngClass]="affecterClass(serv.statut)" class="list-group-item">
     {{ serv.nom | short : 14 }} | {{ serv.type | uppercase }} |
     {{ serv.date_d | date : "fullDate" | uppercase }}
@@ -8,3 +10,7 @@
 
   }
 </ol>
+
+{{ p | async }}
+
+<button (click)="addServer()" class="btn btn-primary">Add Server</button>
