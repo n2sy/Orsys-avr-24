@@ -4,5 +4,5 @@
     src="https://api.dicebear.com/8.x/lorelei/svg?seed={{ oneCandidat.prenom }}"
     alt=""
   /> -->
-  {{ oneCandidat.prenom }} {{ oneCandidat.nom }}
+  {{ oneCandidat.prenom | titlecase }} {{ oneCandidat.nom }}
 </li>
