@@ -8,6 +8,8 @@ import { InfosComponent } from './projet/infos/infos.component';
 import { AddComponent } from './projet/add/add.component';
 import { EditComponent } from './projet/edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './projet/login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 //Version 2 avec Children
 // let myRoutes: Routes = [
@@ -50,6 +52,8 @@ let myRoutes: Routes = [
       },
     ],
   },
+  { path: 'login', component: LoginComponent },
+  { path: 'react-form', component: ReactFormComponent },
   { path: 'accounts', component: HomeAccountComponent },
   { path: 'servers', component: ManageServersComponent },
   { path: 'ms-word', component: MsWordComponent },

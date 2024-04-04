@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './jean/child/child.component';
 import { CvComponent } from './projet/cv/cv.component';
 import { ListeComponent } from './projet/liste/liste.component';
@@ -29,6 +29,7 @@ import { AddComponent } from './projet/add/add.component';
 import { EditComponent } from './projet/edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './projet/login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +58,9 @@ import { LoginComponent } from './projet/login/login.component';
     EditComponent,
     NotFoundComponent,
     LoginComponent,
+    ReactFormComponent,
   ],
-  imports: [BrowserModule, FormsModule, KLEE_ROUTING],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, KLEE_ROUTING],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })

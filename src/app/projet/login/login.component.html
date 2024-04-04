@@ -26,34 +26,38 @@
 
   }
 
-  <label for="klee">E-Mail</label>
-  <input
-    #inputLogin="ngModel"
-    type="text"
-    ngModel
-    name="login"
-    required
-    email
-    id="klee"
-    class="form-control"
-  />
-  @if (inputLogin.invalid && inputLogin.touched) {
-  <div class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
-  }
+  <div #inf="ngModelGroup" ngModelGroup="infos">
+    <label for="klee">E-Mail</label>
+    <input
+      #inputLogin="ngModel"
+      type="text"
+      ngModel
+      name="login"
+      required
+      email
+      id="klee"
+      class="form-control"
+    />
+    @if (inputLogin.invalid && inputLogin.touched) {
+    <div class="alert alert-danger">
+      Veuillez saisir une adresse mail valide
+    </div>
+    }
 
-  <label for="">Mot de passe</label>
-  <input
-    #inputPwd="ngModel"
-    type="text"
-    ngModel
-    minlength="5"
-    name="password"
-    class="form-control"
-  />
+    <label for="">Mot de passe</label>
+    <input
+      #inputPwd="ngModel"
+      type="text"
+      ngModel
+      minlength="5"
+      name="password"
+      class="form-control"
+    />
 
-  @if (inputPwd.invalid && inputPwd.touched) {
-  <div class="alert alert-danger">Veuillez saisir au moins 5 caractères</div>
-  }
+    @if (inputPwd.invalid && inputPwd.touched) {
+    <div class="alert alert-danger">Veuillez saisir au moins 5 caractères</div>
+    }
+  </div>
   <label for="">Langage préféré</label>
   <select name="langage" [ngModel]="defautLangage" class="form-control">
     <option value=""></option>
