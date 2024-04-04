@@ -23,8 +23,8 @@ import { FirstService } from './services/first.service';
 import { RecruesComponent } from './recrues/recrues.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { KLEE_ROUTING } from './app.routing';
-import { NavbarComponent } from './navbar/navbar.component';
-import { InfosComponent } from './infos/infos.component';
+import { NavbarComponent } from './projet/navbar/navbar.component';
+import { InfosComponent } from './projet/infos/infos.component';
 
 @NgModule({
   declarations: [
