@@ -1,1 +1,17 @@
-<p>add works!</p>
+<form #f="ngForm" (ngSubmit)="ajouterCandidat(f.value)">
+  <label for="">Prénom</label>
+  <input type="text" class="form-control" required ngModel name="prenom" />
+  <label for="">Nom</label>
+  <input type="text" class="form-control" required ngModel name="nom" />
+  <label for="">Age</label>
+  <input type="number" class="form-control" required ngModel name="age" />
+  <label for="">Profession</label>
+  <input type="text" class="form-control" ngModel name="profession" />
+  <label for="">Avatar</label>
+  <input type="text" class="form-control" ngModel name="avatar" />
+
+  <br />
+  <button [disabled]="f.invalid" type="submit" class="btn btn-info">
+    Ajouter Candidat
+  </button>
+</form>

@@ -22,9 +22,18 @@ export class GestionCandidatsService {
 
   constructor() {}
 
-  addCandidat() {
-    this.allCandidats.push(
-      new Candidat(3, 'New', 'Candidat', 'designer', 23, 'lisa.png')
-    );
+  addCandidat(newCand) {
+    newCand._id = this.allCandidats[this.allCandidats.length - 1]._id + 1;
+    this.allCandidats.push(newCand);
+  }
+
+  updateCandidat(uCand) {
+    let i = this.allCandidats.findIndex((cand) => cand._id == uCand._id);
+    this.allCandidats[i] = uCand;
+  }
+
+  deleteCandidat(id) {
+    let i = this.allCandidats.findIndex((cand) => cand._id == id);
+    this.allCandidats.splice(i, 1);
   }
 }

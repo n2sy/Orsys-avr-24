@@ -40,7 +40,9 @@
               </tbody>
             </table>
             <div class="d-flex justify-content-center">
-              <button class="btn btn-danger">Delete</button>
+              <button (click)="deleteHandler()" class="btn btn-danger">
+                Delete
+              </button>
               <button routerLink="edit" class="btn btn-primary">Update</button>
             </div>
           </div>
