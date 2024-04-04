@@ -16,6 +16,10 @@ export class GestionCandidatsService {
     return this.allCandidats;
   }
 
+  getCandidatById(id) {
+    return this.allCandidats.find((cand) => cand._id == id);
+  }
+
   constructor() {}
 
   addCandidat() {

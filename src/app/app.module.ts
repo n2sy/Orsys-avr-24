@@ -25,6 +25,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { KLEE_ROUTING } from './app.routing';
 import { NavbarComponent } from './projet/navbar/navbar.component';
 import { InfosComponent } from './projet/infos/infos.component';
+import { AddComponent } from './projet/add/add.component';
+import { EditComponent } from './projet/edit/edit.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { InfosComponent } from './projet/infos/infos.component';
     AccueilComponent,
     NavbarComponent,
     InfosComponent,
+    AddComponent,
+    EditComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, KLEE_ROUTING],
   providers: [FirstService],
