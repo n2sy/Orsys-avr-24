@@ -28,7 +28,7 @@ import { InfosComponent } from './projet/infos/infos.component';
 import { AddComponent } from './projet/add/add.component';
 import { EditComponent } from './projet/edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { SubModule } from './sub/sub.module';
+import { LoginComponent } from './projet/login/login.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +56,7 @@ import { SubModule } from './sub/sub.module';
     AddComponent,
     EditComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, KLEE_ROUTING],
   providers: [FirstService],

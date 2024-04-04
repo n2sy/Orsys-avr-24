@@ -1,11 +1,18 @@
 <h4>{{ selectedServer.nom }}</h4>
 <hr />
 <p>Le statut de ce serveur est {{ selectedServer.statut }}</p>
-<button routerLink="edit" [disabled]="disableBtn" class="btn btn-info">
+<button #btn routerLink="edit" [disabled]="disableBtn" class="btn btn-info">
   Editer
 </button>
 <br />
+
 @if (disableBtn) {
 
 <i>Impossible d'editer ce serveur</i>
 }
+
+<!-- Yannis version
+@if (btn.disabled) {
+
+<i>Impossible d'editer ce serveur</i>
+} -->

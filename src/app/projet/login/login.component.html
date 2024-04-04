@@ -1,0 +1,94 @@
+<form #f="ngForm" (ngSubmit)="submitHandler(f)">
+  <label for="">Gestion des erreurs</label>
+  <input
+    #exp="ngModel"
+    type="text"
+    class="form-control"
+    required
+    minlength="5"
+    pattern="nidhal"
+    ngModel
+    name="exemple"
+  />
+  @if (exp.invalid) {
+  <div class="alert alert-warning">
+    @if (exp.errors['required']) {
+    <p>Ce champ est obligatoire</p>
+
+    } @if (exp.errors['minlength']) {
+    <p>Le nombre minimal de caractères est 5</p>
+
+    } @if (exp.errors['pattern']) {
+    <p>Le pattern est 'nidhal'</p>
+
+    }
+  </div>
+
+  }
+
+  <label for="klee">E-Mail</label>
+  <input
+    #inputLogin="ngModel"
+    type="text"
+    ngModel
+    name="login"
+    required
+    email
+    id="klee"
+    class="form-control"
+  />
+  @if (inputLogin.invalid && inputLogin.touched) {
+  <div class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+  }
+
+  <label for="">Mot de passe</label>
+  <input
+    #inputPwd="ngModel"
+    type="text"
+    ngModel
+    minlength="5"
+    name="password"
+    class="form-control"
+  />
+
+  @if (inputPwd.invalid && inputPwd.touched) {
+  <div class="alert alert-danger">Veuillez saisir au moins 5 caractères</div>
+  }
+  <label for="">Langage préféré</label>
+  <select name="langage" [ngModel]="defautLangage" class="form-control">
+    <option value=""></option>
+    <option value="js">Javascript</option>
+    <option value="java">Java</option>
+    <option value="php">Php</option>
+  </select>
+
+  <label for="">Commentaire</label>
+  <textarea
+    [(ngModel)]="myComment"
+    class="form-control"
+    name="commentaire"
+    cols="5"
+    rows="4"
+  ></textarea>
+  <br />
+  {{ myComment }}
+  <br />
+
+  <button [disabled]="f.invalid" type="submit" class="btn btn-primary">
+    Se connecter
+  </button>
+
+  <button (click)="generatePwd(f)" type="submit" class="btn btn-warning">
+    Generate Password
+  </button>
+  <button (click)="generatePwd2(f)" type="submit" class="btn btn-info">
+    Generate Password II
+  </button>
+  <button (click)="f.reset()" type="submit" class="btn btn-danger">
+    Reset
+  </button>
+
+  <pre>
+    {{ f.value | json }}
+  </pre>
+</form>
