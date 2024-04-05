@@ -1,5 +1,57 @@
 <form #f="ngForm" (ngSubmit)="submitHandler(f)">
-  <label for="">Gestion des erreurs</label>
+  <div class="col-md-8 offset-md-2">
+    <label for="klee">E-Mail</label>
+    <input
+      #inputLogin="ngModel"
+      type="text"
+      ngModel
+      name="login"
+      required
+      email
+      id="klee"
+      class="form-control"
+    />
+    @if (inputLogin.invalid && inputLogin.touched) {
+    <div class="alert alert-danger">
+      Veuillez saisir une adresse mail valide
+    </div>
+    }
+
+    <label for="">Mot de passe</label>
+    <input
+      #inputPwd="ngModel"
+      type="text"
+      ngModel
+      minlength="5"
+      name="password"
+      class="form-control"
+    />
+
+    @if (inputPwd.invalid && inputPwd.touched) {
+    <div class="alert alert-danger">Veuillez saisir au moins 5 caractères</div>
+    }
+    <br />
+    <div class="row">
+      <div class="col-6 offset-4">
+        @if (showSignUp) {
+        <button class="btn btn-warning">S'inscrire</button>
+        <button (click)="switchSignUpButton()" class="btn btn-danger">
+          Switch to Login
+        </button>
+        } @else {
+        <button [disabled]="f.invalid" type="submit" class="btn btn-black">
+          Se connecter
+        </button>
+        <button (click)="switchSignUpButton()" class="btn btn-info">
+          Switch to register
+        </button>
+
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- <label for="">Gestion des erreurs</label>
   <input
     #exp="ngModel"
     type="text"
@@ -94,5 +146,5 @@
 
   <pre>
     {{ f.value | json }}
-  </pre>
+  </pre>-->
 </form>

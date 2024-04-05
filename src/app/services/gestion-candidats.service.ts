@@ -24,6 +24,16 @@ export class GestionCandidatsService {
 
   addCandidat(newCand) {
     newCand._id = this.allCandidats[this.allCandidats.length - 1]._id + 1;
+    // let cand = new Candidat(
+    //   this.allCandidats[this.allCandidats.length - 1]._id + 1,
+    //   newCand.prenom,
+    //   newCand.nom,
+    //   newCand.profession,
+    //   newCand.age,
+    //   newCand.avatar
+    // );
+    // console.log(cand instanceof Candidat);
+
     this.allCandidats.push(newCand);
   }
 

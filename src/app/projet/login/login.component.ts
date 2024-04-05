@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
   defautLangage = 'php';
   myComment = "Je m'amuse avec Klee Group...";
+  showSignUp = false;
   submitHandler(f: NgForm) {
     console.log(f.value);
   }
@@ -26,5 +27,9 @@ export class LoginComponent {
     f.form.patchValue({
       password: Math.random(),
     });
+  }
+
+  switchSignUpButton() {
+    this.showSignUp = !this.showSignUp;
   }
 }
