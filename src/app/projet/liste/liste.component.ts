@@ -20,6 +20,8 @@ export class ListeComponent {
         this.allCandidats = data;
       },
       error: (err) => {
+        alert('Fake DATA !');
+        this.allCandidats = this.candSer.getAllCandidats();
         console.log('Erreur avec getAllCandidats');
       },
     });
