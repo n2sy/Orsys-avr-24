@@ -3,6 +3,7 @@ import { Candidat } from '../../models/candidat';
 import { GestionCandidatsService } from '../../services/gestion-candidats.service';
 import { FirstService } from '../../services/first.service';
 import { GestionRecruesService } from '../../services/gestion-recrues.service';
+import { StandComponent } from '../../stand/stand.component';
 
 @Component({
   selector: 'app-cv',

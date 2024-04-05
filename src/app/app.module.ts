@@ -38,6 +38,8 @@ import {
 } from '@angular/common/http';
 import { ExpObsComponent } from './exp-obs/exp-obs.component';
 import { addTokenInterceptor } from './add-token.interceptor';
+import { StandComponent } from './stand/stand.component';
+import { ExpSignalComponent } from './exp-signal/exp-signal.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { addTokenInterceptor } from './add-token.interceptor';
     ReactFormComponent,
     HttpComponent,
     ExpObsComponent,
+    ExpSignalComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ import { addTokenInterceptor } from './add-token.interceptor';
     ReactiveFormsModule,
     KLEE_ROUTING,
     HttpClientModule,
+    StandComponent,
   ],
   providers: [
     FirstService,
