@@ -26,6 +26,10 @@ export class GestionCandidatsService {
     return this.allCandidats.find((cand) => cand._id == id);
   }
 
+  getCandidatByIdAPI(id) {
+    return this.http.get(`${this.link}/${id}`);
+  }
+
   constructor(private http: HttpClient) {}
 
   uploadAvatar(formData) {
@@ -33,7 +37,12 @@ export class GestionCandidatsService {
   }
 
   addCandidatAPI(cand) {
-    return this.http.post(`${this.link}/free`, cand);
+    // let token = localStorage.getItem('access_token');
+    // if (token) {
+    //   let h = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    //   return this.http.post(`${this.link}`, cand, { headers: h });
+    // }
+    return this.http.post(`${this.link}`, cand);
   }
 
   addCandidat(newCand) {
@@ -55,9 +64,15 @@ export class GestionCandidatsService {
     let i = this.allCandidats.findIndex((cand) => cand._id == uCand._id);
     this.allCandidats[i] = uCand;
   }
+  updateCandidatAPI(uCand) {
+    return this.http.put(`${this.link}/${uCand._id}`, uCand);
+  }
 
   deleteCandidat(id) {
     let i = this.allCandidats.findIndex((cand) => cand._id == id);
     this.allCandidats.splice(i, 1);
+  }
+  deleteCandidatAPI(id) {
+    return this.http.delete(`${this.link}/${id}`);
   }
 }

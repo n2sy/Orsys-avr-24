@@ -17,15 +17,29 @@ export class EditComponent {
   ) {}
 
   ngOnInit() {
-    this.targetCandidat = this.candSer.getCandidatById(
-      this.activatedRoute.snapshot.paramMap.get('id')
-    );
+    this.candSer
+      .getCandidatByIdAPI(this.activatedRoute.snapshot.paramMap.get('id'))
+      .subscribe({
+        next: (res: Candidat) => {
+          this.targetCandidat = res;
+        },
+        error: (err) => {
+          console.log('Erreur avec getById');
+        },
+      });
   }
 
   editerCandidat(candidatEdite) {
     candidatEdite._id = this.targetCandidat._id;
     candidatEdite.avatar = this.targetCandidat.avatar;
-    this.candSer.updateCandidat(candidatEdite);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(candidatEdite).subscribe({
+      next: (res) => {
+        alert(res['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log('Erreur avec updateCand');
+      },
+    });
   }
 }

@@ -7,7 +7,7 @@
             width="150px"
             height="150px"
             class="rounded-circle align-content-center"
-            src="../../../assets/{{ targetCandidat.avatar | defaultAvatar }}"
+            [src]="targetCandidat?.avatar"
             alt=""
           />
         </div>
@@ -20,22 +20,22 @@
             <table class="table table-hover table-striped">
               <tbody>
                 <tr>
-                  <td><strong>Prénom</strong> {{ targetCandidat.prenom }}</td>
+                  <td><strong>Prénom</strong> {{ targetCandidat?.prenom }}</td>
                 </tr>
                 <tr>
-                  <td><strong>Nom</strong> {{ targetCandidat.nom }}</td>
+                  <td><strong>Nom</strong> {{ targetCandidat?.nom }}</td>
                 </tr>
                 <tr>
-                  <td><strong>Age</strong> {{ targetCandidat.age }} ans</td>
+                  <td><strong>Age</strong> {{ targetCandidat?.age }} ans</td>
                 </tr>
 
                 <tr>
                   <td>
-                    <strong>Profession</strong> {{ targetCandidat.profession }}
+                    <strong>Profession</strong> {{ targetCandidat?.profession }}
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Image</strong> {{ targetCandidat.avatar }}</td>
+                  <td><strong>Image</strong> {{ targetCandidat?.avatar }}</td>
                 </tr>
               </tbody>
             </table>

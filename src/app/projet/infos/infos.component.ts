@@ -24,15 +24,29 @@ export class InfosComponent {
     //2eme méthode
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        this.targetCandidat = this.candSer.getCandidatById(p.get('id'));
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (res: Candidat) => {
+            this.targetCandidat = res;
+          },
+          error: (err) => {
+            this.router.navigateByUrl('/not-found');
+          },
+        });
       },
     });
   }
 
   deleteHandler() {
     if (confirm('Etes vous sur de vouloir supprimer ce candidat ?')) {
-      this.candSer.deleteCandidat(this.targetCandidat._id);
-      this.router.navigateByUrl('/cv');
+      this.candSer.deleteCandidatAPI(this.targetCandidat._id).subscribe({
+        next: (res) => {
+          alert(res['message']);
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log('Erreur avec DeleteCand');
+        },
+      });
     }
   }
 }

@@ -1,11 +1,14 @@
 <form #f="ngForm" (ngSubmit)="submitHandler(f)">
   <div class="col-md-8 offset-md-2">
+    @if (showError) {
+    <div class="alert alert-danger">Email et/ou mot de passe invalide(s)</div>
+    }
     <label for="klee">E-Mail</label>
     <input
       #inputLogin="ngModel"
       type="text"
       ngModel
-      name="login"
+      name="email"
       required
       email
       id="klee"
@@ -34,12 +37,14 @@
     <div class="row">
       <div class="col-6 offset-4">
         @if (showSignUp) {
-        <button class="btn btn-warning">S'inscrire</button>
+        <button (click)="register(f)" class="btn btn-warning">
+          S'inscrire
+        </button>
         <button (click)="switchSignUpButton()" class="btn btn-danger">
           Switch to Login
         </button>
         } @else {
-        <button [disabled]="f.invalid" type="submit" class="btn btn-black">
+        <button (click)="login(f)" type="submit" class="btn btn-dark">
           Se connecter
         </button>
         <button (click)="switchSignUpButton()" class="btn btn-info">
