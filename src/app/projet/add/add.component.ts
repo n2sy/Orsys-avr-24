@@ -13,8 +13,32 @@ export class AddComponent {
     private router: Router
   ) {}
 
-  ajouterCandidat(newCand) {
-    this.candSer.addCandidat(newCand);
-    this.router.navigateByUrl('/cv');
+  fileUpload(e) {
+    console.log(e.target.files[0]);
+  }
+
+  ajouterCandidat(newCand, e) {
+    // let formData = new FormData();
+    // formData.append('avatar', e.target[4].files[0]);
+    // this.candSer.uploadAvatar(formData).subscribe({
+    //   next: (res) => {
+    //     console.log(res);
+    //     newCand.avatar = res['fileName'];
+    //     this.candSer.addCandidatAPI(newCand).subscribe({
+    //       next: (res) => {
+    //         alert(res['message']);
+    //         this.router.navigateByUrl('/cv');
+    //       },
+    //       error: (err) => {
+    //         console.log('Erreur avec AddCandidat');
+    //       },
+    //     });
+    //   },
+    //   error: (err) => {
+    //     console.log('Erreur avec uploadAvatar');
+    //   },
+    // });
+    // this.candSer.addCandidat(newCand);
+    // this.router.navigateByUrl('/cv');
   }
 }

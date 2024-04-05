@@ -30,6 +30,9 @@ import { EditComponent } from './projet/edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './projet/login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExpObsComponent } from './exp-obs/exp-obs.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +62,16 @@ import { ReactFormComponent } from './react-form/react-form.component';
     NotFoundComponent,
     LoginComponent,
     ReactFormComponent,
+    HttpComponent,
+    ExpObsComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, KLEE_ROUTING],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    KLEE_ROUTING,
+    HttpClientModule,
+  ],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })
