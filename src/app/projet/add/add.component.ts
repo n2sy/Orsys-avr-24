@@ -34,7 +34,5 @@ export class AddComponent {
         console.log('Erreur avec uploadAvatar');
       },
     });
-    this.candSer.addCandidat(newCand);
-    this.router.navigateByUrl('/cv');
   }
 }
