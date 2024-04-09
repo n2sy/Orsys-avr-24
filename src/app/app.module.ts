@@ -40,6 +40,7 @@ import { ExpObsComponent } from './exp-obs/exp-obs.component';
 import { addTokenInterceptor } from './add-token.interceptor';
 import { StandComponent } from './stand/stand.component';
 import { ExpSignalComponent } from './exp-signal/exp-signal.component';
+import { errorHandleInterceptor } from './error-handle.interceptor';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,9 @@ import { ExpSignalComponent } from './exp-signal/exp-signal.component';
   ],
   providers: [
     FirstService,
-    provideHttpClient(withInterceptors([addTokenInterceptor])),
+    provideHttpClient(
+      withInterceptors([addTokenInterceptor, errorHandleInterceptor])
+    ),
   ],
   bootstrap: [AppComponent],
 })
