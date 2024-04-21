@@ -40,10 +40,20 @@
               </tbody>
             </table>
             <div class="d-flex justify-content-center">
-              <button (click)="deleteHandler()" class="btn btn-danger">
-                Delete
-              </button>
-              <button routerLink="edit" class="btn btn-primary">Update</button>
+              <button
+                (click)="deleteHandler()"
+                pButton
+                pRipple
+                label="Delete"
+                class="p-button-danger"
+              ></button>
+              <button
+                routerLink="edit"
+                pButton
+                pRipple
+                label="Update"
+                class="p-button-primary"
+              ></button>
             </div>
           </div>
         </div>

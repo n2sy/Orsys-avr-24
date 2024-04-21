@@ -16,20 +16,7 @@ body {
   perspective: 800px;
   margin-bottom: 30px;
 }
-.card-container:not(.manual-flip):hover .card,
-.card-container.hover.manual-flip .card {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-.card-container.static:hover .card,
-.card-container.static.hover .card {
-  -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
-  transform: none;
-}
+
 .card {
   -webkit-transition: -webkit-transform 0.5s;
   -moz-transition: -moz-transform 0.5s;
@@ -77,7 +64,7 @@ body {
 .front,
 .back {
   width: 100%;
-  height: 420px;
+  height: 440px;
   border-radius: 4px;
 }
 .card .cover {
@@ -132,7 +119,7 @@ body {
 .card .footer {
   border-top: 1px solid #eee;
   color: #999;
-  margin: 30px 0 0;
+  margin: 10px 10p;
   padding: 10px 0 0;
   text-align: center;
 }
@@ -288,10 +275,5 @@ pre.prettyprint {
   }
   .front {
     z-index: 4;
-  }
-  .card-container:not(.manual-flip):hover .back,
-  .card-container.manual-flip.hover .back {
-    z-index: 5;
-    visibility: visible;
   }
 }

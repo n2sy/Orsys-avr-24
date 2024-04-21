@@ -83,4 +83,4 @@ let myRoutes: Routes = [
 //   { path: '**', redirectTo: 'not-found' },
 // ];
 
-export const KLEE_ROUTING = RouterModule.forRoot(myRoutes);
+export const KLEE_ROUTING = RouterModule.forRoot(myRoutes, { useHash: true });

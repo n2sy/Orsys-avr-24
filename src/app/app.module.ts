@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,7 +39,10 @@ import { ExpObsComponent } from './exp-obs/exp-obs.component';
 import { addTokenInterceptor } from './add-token.interceptor';
 import { StandComponent } from './stand/stand.component';
 import { ExpSignalComponent } from './exp-signal/exp-signal.component';
-import { errorHandleInterceptor } from './error-handle.interceptor';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,10 @@ import { errorHandleInterceptor } from './error-handle.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    ButtonModule,
+    ToastModule,
     FormsModule,
     ReactiveFormsModule,
     KLEE_ROUTING,
@@ -83,10 +89,9 @@ import { errorHandleInterceptor } from './error-handle.interceptor';
     StandComponent,
   ],
   providers: [
+    MessageService,
     FirstService,
-    provideHttpClient(
-      withInterceptors([addTokenInterceptor, errorHandleInterceptor])
-    ),
+    provideHttpClient(withInterceptors([addTokenInterceptor])),
   ],
   bootstrap: [AppComponent],
 })

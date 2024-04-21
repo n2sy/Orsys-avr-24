@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Candidat } from '../../models/candidat';
 import { GestionCandidatsService } from '../../services/gestion-candidats.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +14,8 @@ export class EditComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private candSer: GestionCandidatsService,
-    private router: Router
+    private router: Router,
+    private messageSer: MessageService
   ) {}
 
   ngOnInit() {
@@ -34,11 +36,19 @@ export class EditComponent {
     candidatEdite.avatar = this.targetCandidat.avatar;
     this.candSer.updateCandidatAPI(candidatEdite).subscribe({
       next: (res) => {
-        alert(res['message']);
+        this.messageSer.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: res['message'],
+        });
         this.router.navigateByUrl('/cv');
       },
       error: (err) => {
-        console.log('Erreur avec updateCand');
+        this.messageSer.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: "Vous n'avez pas les autorisations nécessaires",
+        });
       },
     });
   }

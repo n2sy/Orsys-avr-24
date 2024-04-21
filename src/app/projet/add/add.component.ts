@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GestionCandidatsService } from '../../services/gestion-candidats.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-add',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class AddComponent {
   constructor(
     private candSer: GestionCandidatsService,
-    private router: Router
+    private router: Router,
+    private messageSer: MessageService
   ) {}
 
   ajouterCandidat(newCand, e) {
@@ -32,6 +34,27 @@ export class AddComponent {
       },
       error: (err) => {
         console.log('Erreur avec uploadAvatar');
+      },
+    });
+  }
+
+  ajouterCandidat2(newCand) {
+    newCand.avatar = 'bart.jpeg';
+    this.candSer.addCandidatAPI(newCand).subscribe({
+      next: (res) => {
+        this.messageSer.add({
+          severity: 'success',
+          summary: 'Bravo',
+          detail: 'Candidat ajouté avec succès',
+        });
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        this.messageSer.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: "Vous n'avez pas les autorisations nécessaires",
+        });
       },
     });
   }

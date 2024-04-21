@@ -11,7 +11,12 @@
   <input type="file" class="form-control" />
 
   <br />
-  <button [disabled]="f.invalid" type="submit" class="btn btn-info">
-    Ajouter Candidat
-  </button>
+
+  <button
+    (click)="ajouterCandidat2(f.value)"
+    pButton
+    pRipple
+    label="Ajouter Candidat"
+    class="p-button-success"
+  ></button>
 </form>
